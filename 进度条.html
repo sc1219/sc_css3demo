@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .box {
+            width: 600px;
+            height: 30px;
+            border-radius: 5px;
+            background-color: #ccc;
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 3px 2px #ccc;
+        }
+        .content {
+            width: 600px;
+            position: absolute;
+            margin-left: -600px;
+            border-radius: 5px;
+            animation: move1 30s linear infinite;
+            overflow: hidden;
+        }
+        .left {
+            width: 200%;
+            height: 30px;
+            float: right;
+            background: repeating-linear-gradient(30deg,#eee 0%,#eee 2%,greenyellow 2%, greenyellow 4%);
+            animation: move 3s linear infinite;
+        }
+        @keyframes move {
+            from{
+                transform: translateX(0px);
+            }
+            to {
+                transform: translateX(500px);
+            }
+        }
+        @keyframes move1 {
+            from{
+                transform: translateX(0px);
+            }
+            to {
+                transform: translateX(600px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="content">
+        <div class="left">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

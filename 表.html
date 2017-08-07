@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: lightskyblue;
+        }
+        .clock {
+            width: 300px;
+            height: 300px;
+            border: 10px solid #000;
+            border-radius: 50%;
+            margin: 100px auto;
+            position: relative;
+            background-color: #fff;
+            box-shadow: 0px 0px 2px 2px #ccc,0px 0px 3px 2px #666 inset;
+        }
+        .line {
+            position: absolute;
+            width: 8px;
+            height: 300px;
+            background-color: #000;
+            left: 50%;
+            top : 0;
+            transform: translate(-50%,0);
+            /*box-shadow: 0 0 2px 1px #ccc;*/
+        }
+        .line2 {
+            transform: translate(-50%,0) rotate(30deg);
+            z-index: 3;
+        }
+        .line3 {
+            transform: translate(-50%,0) rotate(60deg);
+            z-index: 3;
+        }
+        .line4 {
+            transform: translate(-50%,0) rotate(90deg);
+            z-index: 3;
+        }
+        .line5 {
+            transform: translate(-50%,0) rotate(120deg);
+            z-index: 3;
+        }
+        .line6 {
+            transform: translate(-50%,0) rotate(150deg);
+            z-index: 3;
+        }
+        .line1,.line4 {
+            width: 12px;
+            z-index: 3;
+        }
+        .cover {
+            width: 260px;
+            height: 260px;
+            background-color: #ccc;
+            border-radius: 50%;
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            box-shadow: 0 0 2px 2px #666;
+            z-index: 3;
+        }
+        .cover2 {
+            width: 280px;
+            height: 280px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            box-shadow: 0 0 2px 2px #666;
+            z-index: 1;
+        }
+
+        .hour,.minute,.second {
+            position: absolute;
+            left: 50%;
+            top:50%;
+            transform: translate(-50%,-100%);
+            z-index: 3;
+
+        }
+        .hour {
+            width: 8px;
+            height: 100px;
+            background-color: #000;
+            transform-origin: center bottom;
+            animation: move3 43200s linear infinite;
+            border-radius: 5px;
+            box-shadow: 0 0 3px 1px #aaa;
+        }
+        .minute {
+            width: 6px;
+            height: 130px;
+            background-color: #000;
+            transform-origin: center bottom;
+            animation: move2 3600s linear infinite;
+            border-radius: 3px;
+            box-shadow: 0 0 3px 1px #aaa;
+
+        }
+        .second {
+            width: 2px;
+            height: 150px;
+            background-color: red;
+            transform-origin: center bottom;
+            animation: move1 60s steps(60) infinite;
+        }
+        .center {
+            width: 30px;
+            height: 30px;
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            border-radius: 50%;
+            transform: translate(-50%,-50%);
+            background-color: #000;
+            box-shadow: 0 0 3px 1px #aaa;
+            z-index: 3;
+
+        }
+        .line10 {
+            width: 2px;
+            transform: translate(-50%,0) rotate(6deg);
+        }
+        .line11 {
+            width: 2px;
+            transform: translate(-50%,0) rotate(12deg);
+        }
+        .line12 {
+            width: 2px;
+            transform: translate(-50%,0) rotate(18deg);
+        }
+        .line13 {
+            width: 2px;
+            transform: translate(-50%,0) rotate(24deg);
+        }
+        .line14 {
+            width: 2px;
+            transform: translate(-50%,0) rotate(36deg);
+        }
+        .line15 {
+            width: 2px;
+            transform: translate(-50%,0) rotate(42deg);
+        }
+        .line16 {
+            width: 2px;
+            transform: translate(-50%,0) rotate(48deg);
+        }
+        .line17 {
+             width: 2px;
+             transform: translate(-50%,0) rotate(54deg);
+         }
+        .line18 {
+            width: 2px;
+            transform: translate(-50%,0) rotate(66deg);
+        }
+        .line19 {
+            width: 2px;
+            transform: translate(-50%,0) rotate(72deg);
+        }
+        .line20 {
+            width: 2px;
+            transform: translate(-50%,0) rotate(78deg);
+        }
+        .line21 {
+            width: 2px;
+            transform: translate(-50%,0) rotate(84deg);
+        }
+        .line22 {
+            width: 2px;
+            transform: translate(-50%,0) rotate(96deg);
+        }
+        .line23 {
+            width: 2px;
+            transform: translate(-50%,0) rotate(102deg);
+        }
+        .line24 {
+            width: 2px;
+            transform: translate(-50%,0) rotate(108deg);
+        }
+        .line25 {
+            width: 2px;
+            transform: translate(-50%,0) rotate(114deg);
+        }
+        .line26 {
+            width: 2px;
+            transform: translate(-50%,0) rotate(126deg);
+        }
+        .line27 {
+            width: 2px;
+            transform: translate(-50%,0) rotate(132deg);
+        }
+        .line28 {
+            width: 2px;
+            transform: translate(-50%,0) rotate(138deg);
+        }
+        .line29 {
+            width: 2px;
+            transform: translate(-50%,0) rotate(144deg);
+        }
+        .line30 {
+            width: 2px;
+            transform: translate(-50%,0) rotate(156deg);
+        }
+        .line31 {
+            width: 2px;
+            transform: translate(-50%,0) rotate(162deg);
+        }
+        .line32 {
+            width: 2px;
+            transform: translate(-50%,0) rotate(168deg);
+        }
+        .line33 {
+            width: 2px;
+            transform: translate(-50%,0) rotate(174deg);
+        }
+
+        /*@keyframes move {
+            from{
+                transform: translate(-50%,-100%) rotate(0deg);
+            }
+            to{
+                transform: translate(-50%,-100%) rotate(360deg);
+            }
+        }*/
+        .number1,.number2,.number3,.number4 {
+            text-shadow: 0px 0px 1px #fff,1px 1px 1px #000;
+            z-index: 3;
+
+        }
+        .number1 {
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            transform: translate(-50%,0);
+            font-size: 24px;
+            font-family: "宋体";
+            font-weight: 700;
+        }
+        .number2 {
+            position: absolute;
+            right: 22px;
+            top: 50%;
+            transform: translate(0,-50%);
+            font-size: 24px;
+            font-family: "宋体";
+            font-weight: 700;
+        }
+        .number3 {
+            position: absolute;
+            left: 50%;
+            bottom: 20px;
+            transform: translate(-50%,0);
+            font-size: 24px;
+            font-family: "宋体";
+            font-weight: 700;
+        }
+        .number4 {
+            position: absolute;
+            left: 22px;
+            top: 50%;
+            transform: translate(0,-50%);
+            font-size: 24px;
+            font-family: "宋体";
+            font-weight: 700;
+        }
+        .cover1 {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            border-radius: 50%;
+            background-color: #fff;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            box-shadow: 0 0 3px 2px #ccc;
+            background: radial-gradient(at 0px 0px , #fff 0%,#ccc 20%, #000 100%);
+            z-index: 3;
+        }
+    </style>
+    <style id="animate">
+    </style>
+</head>
+<body>
+<div class="clock">
+    <div class="line line1"></div>
+    <div class="line line2"></div>
+    <div class="line line3"></div>
+    <div class="line line4"></div>
+    <div class="line line5"></div>
+    <div class="line line6"></div>
+
+    <div class="line line10"></div>
+    <div class="line line11"></div>
+    <div class="line line12"></div>
+    <div class="line line13"></div>
+    <div class="line line14"></div>
+    <div class="line line15"></div>
+    <div class="line line16"></div>
+    <div class="line line17"></div>
+    <div class="line line18"></div>
+    <div class="line line19"></div>
+    <div class="line line20"></div>
+    <div class="line line21"></div>
+    <div class="line line22"></div>
+    <div class="line line23"></div>
+    <div class="line line24"></div>
+    <div class="line line25"></div>
+    <div class="line line26"></div>
+    <div class="line line27"></div>
+    <div class="line line28"></div>
+    <div class="line line29"></div>
+    <div class="line line30"></div>
+    <div class="line line31"></div>
+    <div class="line line32"></div>
+    <div class="line line33"></div>
+
+    <div class="cover"></div>
+    <div class="cover1"></div>
+    <div class="cover2"></div>
+    <div class="hour"></div>
+    <div class="minute"></div>
+    <div class="second"></div>
+    <div class="center"></div>
+    <div class="number1">Ⅻ</div>
+    <div class="number2">Ⅲ</div>
+    <div class="number3">Ⅵ</div>
+    <div class="number4">Ⅸ</div>
+</div>
+<script>
+    var animate = document.getElementById("animate");
+    var date = new Date();
+    var second = date.getSeconds();
+    var minute = date.getMinutes()+second/60;
+    var hour = date.getHours()+minute/60;
+    var second1 = second*6;
+    var second2 = second1+360;
+    var minute1 = minute*6;
+    var minute2 = minute1+360;
+    var hour1 = hour*30;
+    var hour2 = hour1+360;
+    animate.innerHTML =
+            "@keyframes move1 {from{transform: translate(-50%,-100%) rotate("+ second1 +"deg);}to{transform: translate(-50%,-100%) rotate("+ second2 +"deg);}}@keyframes move2 {from {transform: translate(-50%,-100%) rotate("+minute1+" deg);}to {transform: translate(-50%,-100%) rotate("+minute2+"deg);}}" +
+            "@keyframes move3 {from {transform: translate(-50%,-100%) rotate("+hour1+" deg);}to {transform: translate(-50%,-100%) rotate("+hour2+"deg);}}" +".minute {transform: translate(-50%,-100%) rotate("+minute1+"deg);}"+".hour {transform: translate(-50%,-100%) rotate("+hour1+"deg);}"
+</script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            transform-style: preserve-3d;
+            transform: rotate3d(1,2,0,-45deg);
+            perspective: 0px;
+        }
+        .box > div {
+            position: absolute;
+            opacity: .7;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            transition: transform 3s;
+            /*border-radius: 100px;*/
+        }
+        .box:hover >div{
+            transform: none;
+        }
+        .front {
+            width: 200px;
+            height: 200px;
+            transform: translateZ(100px);
+            background-color: #ff8405;
+        }
+        .back {
+            width: 200px;
+            height: 200px;
+            background-color: #13fff4;
+            transform: translateZ(-100px);
+        }
+        .left {
+            width: 200px;
+            height: 200px;
+            transform: translateX(-100px) rotateY(-90deg);
+            background-color: #ff148f;
+        }
+        .right {
+            width: 200px;
+            height: 200px;
+            background-color: #1a6dff;
+            transform: translateX(100px) rotateY(90deg);
+        }
+        .bottom {
+            width: 200px;
+            height: 200px;
+            background-color: #901fff;
+            transform: translateY(100px) rotateX(-90deg);
+        }
+        .top {
+            width: 200px;
+            height: 200px;
+            transform: translateY(-100px) rotateX(90deg);
+            background-color: #66ff0f;
+        }
+
+        .front1 {
+            transform: translateZ(80px);
+            background-color: #ff8405;
+        }
+        .back1 {
+            background-color: #13fff4;
+            transform: translateZ(-80px);
+        }
+        .left1 {
+            transform: translateX(-80px) rotateY(-90deg);
+            background-color: #ff148f;
+        }
+        .right1 {
+
+            background-color: #fff91d;
+            transform: translateX(80px) rotateY(90deg);
+        }
+        .bottom1 {
+
+            background-color: #901fff;
+            transform: translateY(80px) rotateX(-90deg);
+        }
+        .top1 {
+
+            transform: translateY(-80px) rotateX(90deg);
+            background-color: #ff1414;
+        }
+
+        .front2 {
+             transform: translateZ(60px);
+             background-color: #ff8405;
+         }
+        .back2 {
+            background-color: #13fff4;
+            transform: translateZ(-60px);
+        }
+        .left2 {
+            transform: translateX(-60px) rotateY(-90deg);
+            background-color: #ff148f;
+        }
+        .right2 {
+
+            background-color: #fff91d;
+            transform: translateX(60px) rotateY(90deg);
+        }
+        .bottom2 {
+
+            background-color: #901fff;
+            transform: translateY(60px) rotateX(-90deg);
+        }
+        .top2 {
+            transform: translateY(-60px) rotateX(90deg);
+            background-color: #ff1414;
+        }
+
+        .front3 {
+            transform: translateZ(40px);
+            background-color: #ff8405;
+        }
+        .back3 {
+            background-color: #13fff4;
+            transform: translateZ(-40px);
+        }
+        .left3 {
+            transform: translateX(-40px) rotateY(-90deg);
+            background-color: #ff148f;
+        }
+        .right3 {
+            background-color: #fff91d;
+            transform: translateX(40px) rotateY(90deg);
+        }
+        .bottom3 {
+            background-color: #901fff;
+            transform: translateY(40px) rotateX(-90deg);
+        }
+        .top3 {
+            transform: translateY(-40px) rotateX(90deg);
+            background-color: #ff1414;
+        }
+
+        .front4 {
+            transform: translateZ(20px);
+            background-color: #ff8405;
+        }
+        .back4 {
+            background-color: #13fff4;
+            transform: translateZ(-20px);
+        }
+        .left4 {
+            transform: translateX(-20px) rotateY(-90deg);
+            background-color: #ff148f;
+        }
+        .right4 {
+            background-color: #fff91d;
+            transform: translateX(20px) rotateY(90deg);
+        }
+        .bottom4 {
+
+            background-color: #901fff;
+            transform: translateY(20px) rotateX(-90deg);
+        }
+        .top4 {
+
+            transform: translateY(-20px) rotateX(90deg);
+            background-color: #ff1414;
+        }
+        .front5 {
+            transform: translateZ(0px);
+            background-color: #ff8405;
+        }
+        .bottom5 {
+            background-color: #901fff;
+            transform: translateY(0px) rotateX(-90deg);
+        }
+        .left5 {
+            transform: translateX(0px) rotateY(-90deg);
+            background-color: #ff148f;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="front"></div>
+    <div class="back"></div>
+    <div class="top"></div>
+    <div class="bottom"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+
+    <div class="front1"></div>
+    <div class="back1"></div>
+    <div class="top1"></div>
+    <div class="bottom1"></div>
+    <div class="left1"></div>
+    <div class="right1"></div>
+
+    <div class="front2"></div>
+    <div class="back2"></div>
+    <div class="top2"></div>
+    <div class="bottom2"></div>
+    <div class="left2"></div>
+    <div class="right2"></div>
+
+    <div class="front3"></div>
+    <div class="back3"></div>
+    <div class="top3"></div>
+    <div class="bottom3"></div>
+    <div class="left3"></div>
+    <div class="right3"></div>
+
+    <div class="front4"></div>
+    <div class="back4"></div>
+    <div class="top4"></div>
+    <div class="bottom4"></div>
+    <div class="left4"></div>
+    <div class="right4"></div>
+
+    <div class="front5"></div>
+    <div class="bottom5"></div>
+    <div class="left5"></div>
+</div>
+</body>
+</html>
